@@ -61,7 +61,20 @@ public class LoginSteps {
     	System.out.println("invalid password eneterd");
     }
     
+    @When("user enters empty username")
+    public  void user_enter_empty_username()
+    {
+    	login.enterusername(ConfigReader.getProperty("emptyusername"));
+    	System.out.println("Empty username eneterd");
+    }
     
+    @When("user enters empty password")
+   public void user_enters_empty_password()
+    
+    {
+    	login.enterpassword(ConfigReader.getProperty("emptypassword"));
+    	System.out.println("users enters empty password");
+    }
     
     @Then("login error message should display")
     public void login_Error_Message_should_Display()
@@ -71,4 +84,18 @@ public class LoginSteps {
     	System.out.println("the login page error message is :" + actualloginmessage );
     	Assert.assertEquals("Credentials are wrong!", actualloginmessage);
     }
+    
+    @Then("user should remain in the login page")
+    public void user_should_remain_in_the_login_page()
+    {
+    	String actualloginurl = login.currentloginurl();
+    	
+    	System.out.println("the actual login url is  :" + actualloginurl );
+    	
+    	Assert.assertTrue(
+    		    BaseClass.driver.getCurrentUrl().contains("login"));
+    	
+    	System.out.println(login.currentloginurl());
+    }
+       
 }

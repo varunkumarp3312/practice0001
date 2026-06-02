@@ -10,6 +10,7 @@ import io.cucumber.junit.Cucumber;
 		features = "src/test/resources/features/login.feature",
 		glue = {"stepDefinitions", "hooks"},
 		plugin = {"pretty"},
+//		tags="@emptyusername",
 		monochrome = true
 		
 		)

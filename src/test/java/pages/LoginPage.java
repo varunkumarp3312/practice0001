@@ -44,4 +44,10 @@ public class LoginPage {
 		return driver.findElement(errorMessage).getText();
 	}
 	
+	public String currentloginurl()
+	{
+		return driver.getCurrentUrl();
+	
+	}
+	
 }
