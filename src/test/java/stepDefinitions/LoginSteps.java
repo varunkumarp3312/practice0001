@@ -10,8 +10,6 @@ import utils.ConfigReader;
 
 public class LoginSteps {
 	
-	
-
     LoginPage login;
 
     @Given("user opens login page")
@@ -47,8 +45,6 @@ public class LoginSteps {
 
         System.out.println("Login clicked");
     }
-    
-    
     
     
     @When("user enters invalid username")

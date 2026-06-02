@@ -1,8 +1,13 @@
 package hooks;
 
+import java.io.IOException;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import utils.BaseClass;
+import utils.ScreenshotUtility;
+
 
 public class Hooks {
 	
@@ -13,7 +18,15 @@ public class Hooks {
 		System.out.println("browswer opened successfully");
 	}
 @After
-	public static void teardown(){
+	public  void teardown(Scenario scenario) throws IOException{
+	
+	
+	if(scenario.isFailed()) {
+		ScreenshotUtility.captureScreenshot(scenario.getName());
+		
+		System.out.println("Screemshot captured");
+		
+	}
 		
 		BaseClass.closeBrowser();
 		System.out.println("browser closed");
