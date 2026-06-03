@@ -3,50 +3,50 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import utils.WaitUtility;
+import utils.CommonMethods;
 
 public class LoginPage {
 	
 	 WebDriver driver;
+	 CommonMethods common;
 	By username = By.cssSelector("input[placeholder='Enter Email Address']");
 	By password =  By.cssSelector("input[placeholder='Enter Password']");
 	By loginbutton = By.xpath("//button[@class='login-button']");
+	By errorMessage = By.id("notistack-snackbar");
+
 	
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		 common=new CommonMethods(driver);
 	}
 	
-	public void enterusername(String userName)
+	public void enterUsername(String userName)
 	{
-		driver.findElement(username).clear();
-		driver.findElement(username).sendKeys(userName);
+		common.enterText(username, userName);
 	}
 	
-	public void  enterpassword(String passWord)
+	public void  enterPassword(String passWord)
 	{
-		driver.findElement(password).clear();
-		driver.findElement(password).sendKeys(passWord);
+		common.enterText(password, passWord);
 	}
 	
-	public void clickloginbutton()
+	public void clickLoginButton()
 	{
-		driver.findElement(loginbutton).click();
+		common.click(loginbutton);
 		
 		System.out.println("log in button clicked successfully");
 	}
 	
-	By errorMessage = By.id("notistack-snackbar");
 	
 	public String getErrorMessage (){
 		
-		WaitUtility.waitforelement(driver, errorMessage);
-		return driver.findElement(errorMessage).getText();
+		return common.getText(errorMessage);
 	}
 	
-	public String currentloginurl()
+	public String getcurrenturl()
 	{
-		return driver.getCurrentUrl();
+	return common.getcurrenturl(errorMessage);
 	
 	}
 	

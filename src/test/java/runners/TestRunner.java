@@ -9,8 +9,13 @@ import io.cucumber.junit.Cucumber;
 		
 		features = "src/test/resources/features/login.feature",
 		glue = {"stepDefinitions", "hooks"},
-		plugin = {"pretty"},
-//		tags="@emptyusername",
+		plugin = {
+				
+				"pretty",
+				"html:target/cucumber-reports/cucumber.html",
+                "json:target/cucumber-reports/cucumber.json"
+		},
+			tags = "@loginRegression",
 		monochrome = true
 		
 		)
