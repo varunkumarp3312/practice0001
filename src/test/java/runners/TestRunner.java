@@ -7,7 +7,8 @@ import io.cucumber.junit.Cucumber;
 @RunWith(Cucumber.class)
 @io.cucumber.junit.CucumberOptions(
 		
-		features = "src/test/resources/features/login.feature",
+		features = "src/test/resources/features",
+		
 		glue = {"stepDefinitions", "hooks"},
 		plugin = {
 				
@@ -15,7 +16,8 @@ import io.cucumber.junit.Cucumber;
 				"html:target/cucumber-reports/cucumber.html",
                 "json:target/cucumber-reports/cucumber.json"
 		},
-			tags = "@loginRegression",
+//			tags = "@loginRegression",
+				tags = "@dashboard",
 		monochrome = true
 		
 		)

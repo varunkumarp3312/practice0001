@@ -2,6 +2,8 @@ package stepDefinitions;
 
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
 import org.junit.Assert;
 import pages.DashboardPage;
 import utils.BaseClass;
@@ -22,4 +24,21 @@ public class DashboardSteps {
 		
 	}
 	
+	  @When("user clicks daily volume button")
+	  public void user_click_daily_meta()
+	  {
+		  dashboard.clickDailyMeta();
+	}
+	  @Then("daily updated data should display based on meta filter")
+	  
+	public void  user_Fetch_daily_volume()
+	  {
+		  dashboard = new DashboardPage(BaseClass.driver);
+
+		    String dailyValue = dashboard.fetchDailyVolume();
+
+		    Assert.assertNotNull(dailyValue);
+
+		    System.out.println("Daily volume value is : " + dailyValue);
+	  }
 }
