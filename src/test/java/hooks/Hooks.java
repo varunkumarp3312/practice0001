@@ -18,17 +18,17 @@ public class Hooks {
 		System.out.println("browswer opened successfully");
 	}
 @After
-	public  void teardown(Scenario scenario) throws IOException{
-	
-	
-	if(scenario.isFailed()) {
-		ScreenshotUtility.captureScreenshot(scenario.getName());
-		
-		System.out.println("Screemshot captured");
-		
-	}
-		
-		BaseClass.closeBrowser();
-		System.out.println("browser closed");
-	}
+public void teardown(Scenario scenario) throws IOException {
+
+    if (scenario.isFailed() && BaseClass.driver != null) {
+
+        ScreenshotUtility.captureScreenshot(scenario.getName());
+
+        System.out.println("Screenshot captured");
+    }
+
+    BaseClass.closeBrowser();
+
+    System.out.println("browser closed");
+}
 }

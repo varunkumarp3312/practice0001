@@ -11,6 +11,11 @@ public class ScreenshotUtility {
 	
 	public static void captureScreenshot( String filename) throws IOException
 	{
+		
+		if (BaseClass.driver == null) {
+	        System.out.println("Driver is null, screenshot skipped");
+	        return;
+	    }
 		TakesScreenshot ts = (TakesScreenshot)BaseClass.driver;
 		
 		File source = ts.getScreenshotAs(OutputType.FILE);

@@ -18,9 +18,8 @@ public class BaseClass {
 		
 		if(browser.equalsIgnoreCase("chrome"))
 		{
-			WebDriverManager.chromedriver().setup();
-			
-			driver = new ChromeDriver();
+			WebDriverManager.chromedriver().clearDriverCache().setup();
+		    driver = new ChromeDriver();
 		}
 		
 		driver.manage().window().maximize();
