@@ -17,7 +17,7 @@ import io.cucumber.junit.Cucumber;
                 "json:target/cucumber-reports/cucumber.json"
 		},
 //			tags = "@loginRegression",
-				tags = "@dashboard",
+				tags = "@dashboard00001",
 		monochrome = true
 		
 		)

@@ -45,5 +45,8 @@ public class CommonMethods {
 		return driver.getCurrentUrl();
 	}
 	
+
+	
+	
 	
 }

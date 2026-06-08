@@ -16,6 +16,13 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locators));
 	}
 	
+	public static void waitForElementInvisible(WebDriver driver, By locator) {
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+	}
+	
 	
 
 }
