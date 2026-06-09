@@ -16,6 +16,10 @@ public class BaseClass {
 		
 		String browser = ConfigReader.getProperty("browser");
 		
+		if (browser == null) {
+		    throw new RuntimeException("browser value is missing in config.properties");
+		}
+		
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().clearDriverCache().setup();
