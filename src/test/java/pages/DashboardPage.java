@@ -61,6 +61,10 @@ public class DashboardPage {
 	
 	By customDateMetaValue = By.xpath("//div[text()='Custom Range']/ancestor::div[contains(@class,'stats-card')]//div[contains(@class,'stats-value')]");
 	
+	By clientPageButton = By.xpath("//a[@href='/Client']");
+	
+	By payinTransactionsButton = By.xpath("//a[@href='/PayinTransaction']");
+	
 	
 	public  DashboardPage(WebDriver driver) {
 		
@@ -194,6 +198,15 @@ public class DashboardPage {
 		 String customvalue=common.getText(customDateMetaValue);
 		
 		 return customvalue;
+	}
+	
+	public void clickClientPage() {
+		common.click(clientPageButton);
+	}
+	
+	public void clickPayinTransactionsPage()
+	{
+		common.click(payinTransactionsButton);
 	}
 	
 }

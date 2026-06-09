@@ -93,7 +93,7 @@ public class LoginSteps {
         System.out.println("Login page opened");
     }
 
-    @When("user enters username from config {string}")
+    @When("user enters username {string}")
     public void user_enters_username_from_config(String usernameKey) {
 
         String username = ConfigReader.getProperty(usernameKey);
@@ -103,7 +103,7 @@ public class LoginSteps {
         System.out.println("Username entered using key : " + usernameKey);
     }
 
-    @When("user enters password from config {string}")
+    @When("user enters password {string}")
     public void user_enters_password_from_config(String passwordKey) {
 
         String password = ConfigReader.getProperty(passwordKey);

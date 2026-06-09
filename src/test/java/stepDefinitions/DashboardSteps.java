@@ -6,12 +6,16 @@ import org.junit.Assert;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.Client_Page;
 import pages.DashboardPage;
+import pages.Pay_In_Transaction;
 import utils.BaseClass;
 
 public class DashboardSteps {
 
 	DashboardPage dashboard;
+	Client_Page client;
+	Pay_In_Transaction payin;
 	
 	
 	@Then("dashboard should display")
@@ -181,10 +185,41 @@ public class DashboardSteps {
 		 
 	 }
 	 
-
+	 @When("user navigates to {string}")
+	 public void user_navigates_to(String Menu)
+	 {
+		 if(Menu.equalsIgnoreCase("client")) {
+			 dashboard =new DashboardPage(BaseClass.driver);
+			 dashboard.clickClientPage();
+		 }
+		 else if(Menu.equalsIgnoreCase("Transactions"))
+		 {
+			 dashboard = new DashboardPage(BaseClass.driver);
+			 dashboard.clickPayinTransactionsPage();
+		 }
+		 
+	 }
 	 
-
-
+	 @Then("{string} page should be displayed")
+	 public void page_should_be_displayed(String Menu)
+	 {
+		 if(Menu.equalsIgnoreCase("client"))
+		 {
+			 client = new Client_Page(BaseClass.driver);
+			 String headerText = client.fetchClientPageHeaderText();
+			 System.out.println("client Page Header text is :"+headerText);
+			 Assert.assertEquals("Client", headerText);
+		 }
+		 else if(Menu.equalsIgnoreCase("Transactions"))
+		 {
+			 payin = new Pay_In_Transaction(BaseClass.driver);
+			 String payinheader = payin.fetchPayinHeaderText();
+			 System.out.println("payin page header text is :"+payinheader);
+			 Assert.assertTrue(payinheader.contains("Pay-In"));
+		 }
+		 
+	 }
+	 
 	 
 	 
 }

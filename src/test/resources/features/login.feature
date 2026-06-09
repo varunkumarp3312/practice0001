@@ -4,8 +4,8 @@ Feature: Login Functionality
 Scenario Outline: Login validation with multiple credentials
 
   Given user opens login page
-  When user enters username from config "<usernameKey>"
-  And user enters password from config "<passwordKey>"
+  When user enters username "<usernameKey>"
+  And user enters password "<passwordKey>"
   And user clicks login
   Then user validates login result "<expectedResult>"
 

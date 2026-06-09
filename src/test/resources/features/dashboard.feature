@@ -1,12 +1,12 @@
 Feature: Dashboard Functionality
 
 
-  @dashboardRegression
+  @dashboardRegression1
 Scenario: Verify dashboard page is displayed after login
 
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+   When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   
@@ -14,8 +14,8 @@ Scenario: Verify dashboard page is displayed after login
 Scenario: Verify daily volume refresh
 
   Given user opens login page
- When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+  When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks daily volume button
@@ -25,8 +25,8 @@ Scenario: Verify daily volume refresh
 Scenario: Verify week card opens client selection popup
 
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+   When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks this week volume button
@@ -36,8 +36,8 @@ Scenario: Verify week card opens client selection popup
 Scenario: Verify week card data after selecting client
 
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+   When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks this week volume button
@@ -49,8 +49,8 @@ Scenario: Verify week card data after selecting client
 Scenario: Verify selected client can be deselected
 
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+   When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks this week volume button
@@ -63,8 +63,8 @@ Scenario: Verify selected client can be deselected
 Scenario: Verify month card opens client selection popup
 
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+  When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks this month volume button
@@ -75,8 +75,8 @@ Scenario: Verify month card opens client selection popup
 Scenario: Verify month card data after selecting client
 
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+  When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks this month volume button
@@ -88,8 +88,8 @@ Scenario: Verify month card data after selecting client
   Scenario: verify the functionality of custom date range selection
   
   Given user opens login page
-  When user enters username from config "validUsername"
-  And user enters password from config "validPassword"
+  When user enters username "validUsername"
+  And user enters password "validPassword"
   And user clicks login
   Then dashboard should display
   When user clicks on date range selection button
@@ -99,3 +99,39 @@ Scenario: Verify month card data after selecting client
   And select To date 
   And click on the apply button
   Then The particular clients data should be display with the selected date
+  
+  @navigationRegression
+	Scenario Outline: Verify navigation to all modules
+
+  Given user opens login page
+  When user enters username "validUsername"
+  And user enters password "validPassword"
+  And user clicks login
+  Then dashboard should display
+
+  When user navigates to "<Menu>"
+  Then "<Menu>" page should be displayed
+
+Examples:
+| Menu              |
+| Client            |
+| Transactions      |
+#| Developers        |
+#| SP Pay-In         |
+#| SP Pay-Out        |
+#| Wallet Ledger     |
+#| Payout Balance    |
+#| Settlement        |
+#| Change Password   |
+#| Reseller          |
+#| Payin Scheduler   |
+#| Payout Scheduler  |
+#| CB-VPA            |
+#| Reports           |
+#| Audit Logs        |
+  
+  
+  
+  
+  
+  
