@@ -216,6 +216,7 @@ public class DashboardSteps {
 			 String payinheader = payin.fetchPayinHeaderText();
 			 System.out.println("payin page header text is :"+payinheader);
 			 Assert.assertTrue(payinheader.contains("Pay-In"));
+			 System.out.println("wedfgb");
 		 }
 		 
 	 }
