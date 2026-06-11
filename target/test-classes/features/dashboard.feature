@@ -116,7 +116,7 @@ Examples:
 | Menu              |
 | Client            |
 | Payin-Transactions      |
-#| Payout-Transactions	  |
+| Payout-Transactions	  |
 #| Developers        |
 #| SP Pay-In         |
 #| SP Pay-Out        |

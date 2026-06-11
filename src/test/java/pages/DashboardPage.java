@@ -241,9 +241,15 @@ public class DashboardPage {
 	
 	public void clickPayoutPage()
 	{
-		common.click(clickPayoutDropdown);
-		System.out.println("payout dropdown selected");
-		common.click(clickPayoutPageButton);
+		 common.click(clickPayoutDropdown);
+
+		    try {
+		        Thread.sleep(1000);
+		    } catch (InterruptedException e) {
+		        e.printStackTrace();
+		    }
+
+		    common.jsClick(clickPayoutPageButton);
 	}
 	
 	public void clickWalletAndLedgertPage()

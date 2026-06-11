@@ -1,7 +1,9 @@
 package utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CommonMethods {
 
@@ -43,6 +45,13 @@ public class CommonMethods {
 	public String getcurrenturl(By locator)
 	{
 		return driver.getCurrentUrl();
+	}
+	
+	public void jsClick(By locator) {
+	    WebElement element = driver.findElement(locator);
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+	    js.executeScript("arguments[0].click();", element);
 	}
 	
 

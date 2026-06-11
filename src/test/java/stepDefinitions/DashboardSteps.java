@@ -231,9 +231,9 @@ public class DashboardSteps {
 		 else if (Menu.equalsIgnoreCase("Payout-Transactions"))
 		 {
 			 payout = new Pay_Out_Transaction(BaseClass.driver);
-			 String payoutheader = payout.fetchPayoutHeaderText();
-			 System.out.println(payoutheader);
-			 Assert.assertTrue(payoutheader.contains("Pay-Out"));
+			 String payoutheadertext = payout.fetchPayoutHeaderText();
+			 System.out.println(payoutheadertext);
+			 Assert.assertTrue(payoutheadertext.contains("Pay-Out"));
 		 }
 		 
 	 }
