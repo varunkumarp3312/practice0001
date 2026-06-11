@@ -114,8 +114,9 @@ Scenario: Verify month card data after selecting client
 
 Examples:
 | Menu              |
-| Client            |
-| Transactions      |
+#| Client            |
+#| Payin-Transactions      |
+| Payout-Transactions	  |
 #| Developers        |
 #| SP Pay-In         |
 #| SP Pay-Out        |

@@ -65,6 +65,36 @@ public class DashboardPage {
 	
 	By payinTransactionsButton = By.xpath("//a[@href='/PayinTransaction']");
 	
+	By clickPayoutDropdown = By.xpath("//a[@href='/PrefundTransaction']");
+	
+	By clickPayoutPageButton = By.xpath("//a[@href='/PayoutTransaction']");
+	
+	By developerPageButton = By.xpath("//a[@href='/Developers']");
+	
+	By SpPayinPageButton = By.xpath("//a[@href='/Service-Provider-Payin']");
+	
+	By spPayoutPageButton = By.xpath("//a[@href='/Service-Provider-Payout']");
+	
+	By walletAndLedgerButton = By.xpath("//a[@href='/wallet']");
+	
+	By payoutBalanceButton = By.xpath("//a[@href='/init-credit-debit']");
+	
+	By settlementButton = By.xpath("//a[@href='/settlement']");
+	
+	By changePasswordButton = By.xpath("//a[@href='/ChangePassword']");
+	
+	By resellerpageButton =By.xpath("//a[@href='/reseller']");
+	
+	By payinSchedulerPageButton = By.xpath("//a[@href='/payinscheduler']");
+	
+	By payoutSchedulerPageButton = By.xpath("//a[@href='/payoutscheduler']");
+	
+	By chargeBackVpaPageButton = By.xpath("//a[@href='/cbvpa']");
+	
+	By reportsPageButton = By.xpath("//a[@href='/reports']");
+	
+	By auditLogPageButton = By.xpath("//a[@href='/audit-logs']");
+	
 	
 	public  DashboardPage(WebDriver driver) {
 		
@@ -208,6 +238,46 @@ public class DashboardPage {
 	{
 		common.click(payinTransactionsButton);
 	}
+	
+	public void clickPayoutPage()
+	{
+		common.click(clickPayoutDropdown);
+		System.out.println("payout dropdown selected");
+		common.click(clickPayoutPageButton);
+	}
+	
+	public void clickWalletAndLedgertPage()
+	{
+		
+	}
+	public void clickPayoutBalancePage()
+	{
+		
+	}
+	public void clickSettlementPage()
+	{
+		
+	}
+	public void changePasswordPage()
+	{
+		
+	}
+	
+	public void clickResllerPage()
+	{
+		
+	}
+	
+	public void clickPayinSchedulerPage()
+	{
+		
+	}
+	
+	public void clickSettlement()
+	{
+		
+	}
+	
 	
 }
 

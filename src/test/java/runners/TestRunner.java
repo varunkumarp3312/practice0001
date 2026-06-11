@@ -18,8 +18,8 @@ import io.cucumber.junit.Cucumber;
 		},
 		
 		
-			tags = "@loginRegression",
-//				tags = "@navigationRegression",
+//			tags = "@loginRegression",
+				tags = "@navigationRegression",
 		monochrome = true
 		
 		)

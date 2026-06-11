@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import pages.Client_Page;
 import pages.DashboardPage;
 import pages.Pay_In_Transaction;
+import pages.Pay_Out_Transaction;
 import utils.BaseClass;
 
 public class DashboardSteps {
@@ -16,6 +17,7 @@ public class DashboardSteps {
 	DashboardPage dashboard;
 	Client_Page client;
 	Pay_In_Transaction payin;
+	Pay_Out_Transaction payout;
 	
 	
 	@Then("dashboard should display")
@@ -192,10 +194,16 @@ public class DashboardSteps {
 			 dashboard =new DashboardPage(BaseClass.driver);
 			 dashboard.clickClientPage();
 		 }
-		 else if(Menu.equalsIgnoreCase("Transactions"))
+		 else if(Menu.equalsIgnoreCase("Payin-Transactions"))
 		 {
 			 dashboard = new DashboardPage(BaseClass.driver);
 			 dashboard.clickPayinTransactionsPage();
+		 }
+		 else if(Menu.equalsIgnoreCase("Payout-Transactions"))
+		 {
+			 dashboard=new DashboardPage(BaseClass.driver);
+			 dashboard.clickPayinTransactionsPage();
+			 dashboard.clickPayoutPage();
 		 }
 		 
 	 }
@@ -210,13 +218,22 @@ public class DashboardSteps {
 			 System.out.println("client Page Header text is :"+headerText);
 			 Assert.assertEquals("Client", headerText);
 		 }
-		 else if(Menu.equalsIgnoreCase("Transactions"))
+		 else if(Menu.equalsIgnoreCase("Payin-Transactions"))
 		 {
 			 payin = new Pay_In_Transaction(BaseClass.driver);
+			 
 			 String payinheader = payin.fetchPayinHeaderText();
 			 System.out.println("payin page header text is :"+payinheader);
 			 Assert.assertTrue(payinheader.contains("Pay-In"));
-			 System.out.println("wedfgb");
+			
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Payout-Transactions"))
+		 {
+			 payout = new Pay_Out_Transaction(BaseClass.driver);
+			 String payoutheader = payout.fetchPayoutHeaderText();
+			 System.out.println(payoutheader);
+			 Assert.assertTrue(payoutheader.contains("Pay-Out"));
 		 }
 		 
 	 }
