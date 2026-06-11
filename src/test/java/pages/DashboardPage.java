@@ -252,37 +252,68 @@ public class DashboardPage {
 		    common.jsClick(clickPayoutPageButton);
 	}
 	
+	
+	public void clickDeveloperPage()
+	{
+		common.click(developerPageButton);
+	}
+	public void clickServicePayinPage()
+	{
+		common.click(SpPayinPageButton);;
+	}
+	
+	public void clickservicePayoutPage()
+	{
+		common.click(spPayoutPageButton);
+	}
 	public void clickWalletAndLedgertPage()
 	{
-		
+		common.click(walletAndLedgerButton);
 	}
 	public void clickPayoutBalancePage()
 	{
-		
+		common.click(payoutBalanceButton);
 	}
 	public void clickSettlementPage()
 	{
-		
+	common.click(settlementButton);	
 	}
 	public void changePasswordPage()
 	{
-		
+		common.click(changePasswordButton);
 	}
 	
 	public void clickResllerPage()
 	{
-		
+		common.click(resellerpageButton);
 	}
 	
 	public void clickPayinSchedulerPage()
 	{
-		
+		common.click(payinSchedulerPageButton);
 	}
 	
-	public void clickSettlement()
+	public void clickPayoutSchedulerPage()
 	{
-		
+		common.click(payoutSchedulerPageButton);
 	}
+	
+	public void clickCBVpaManagementPage()
+	{
+		common.click(chargeBackVpaPageButton);
+	}
+	
+	public void clickReportsPage()
+	{
+		common.click(reportsPageButton);
+	}
+	
+	public void clickAuditPagePage()
+	{
+		common.click(auditLogPageButton);
+	}
+	
+	
 	
 	
 }

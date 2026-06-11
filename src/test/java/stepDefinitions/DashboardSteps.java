@@ -6,10 +6,22 @@ import org.junit.Assert;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.Audit_Logs_Page;
+import pages.CB_VPA_Management_Page;
+import pages.Change_Password_Page;
 import pages.Client_Page;
 import pages.DashboardPage;
+import pages.Developers_Page;
+import pages.Pay_In_Scheduler;
 import pages.Pay_In_Transaction;
+import pages.Pay_Out_Scheduler;
 import pages.Pay_Out_Transaction;
+import pages.Payout_Balance_Page;
+import pages.Reports_Page;
+import pages.Reseller_Management;
+import pages.Service_Provider_Pay_In;
+import pages.Service_Provider_Pay_Out;
+import pages.Settlement_Page;
 import utils.BaseClass;
 
 public class DashboardSteps {
@@ -18,6 +30,18 @@ public class DashboardSteps {
 	Client_Page client;
 	Pay_In_Transaction payin;
 	Pay_Out_Transaction payout;
+	Developers_Page developers;
+	Service_Provider_Pay_In sppayin;
+	Service_Provider_Pay_Out sppayout;
+	Payout_Balance_Page payoutbalance;
+	Settlement_Page settlemet;
+	Change_Password_Page changepassword;
+	Reseller_Management reseller;
+	Pay_In_Scheduler payinscheduler;
+	Pay_Out_Scheduler payoutscheduler;
+	CB_VPA_Management_Page cbvpamanagement;
+	Reports_Page reports;
+	Audit_Logs_Page auditpage;
 	
 	
 	@Then("dashboard should display")
@@ -190,21 +214,84 @@ public class DashboardSteps {
 	 @When("user navigates to {string}")
 	 public void user_navigates_to(String Menu)
 	 {
-		 if(Menu.equalsIgnoreCase("client")) {
-			 dashboard =new DashboardPage(BaseClass.driver);
-			 dashboard.clickClientPage();
-		 }
-		 else if(Menu.equalsIgnoreCase("Payin-Transactions"))
-		 {
-			 dashboard = new DashboardPage(BaseClass.driver);
-			 dashboard.clickPayinTransactionsPage();
-		 }
-		 else if(Menu.equalsIgnoreCase("Payout-Transactions"))
-		 {
-			 dashboard=new DashboardPage(BaseClass.driver);
-			 dashboard.clickPayinTransactionsPage();
-			 dashboard.clickPayoutPage();
-		 }
+		 dashboard =new DashboardPage(BaseClass.driver);
+//		 if(Menu.equalsIgnoreCase("client")) {
+////			 dashboard =new DashboardPage(BaseClass.driver);
+//			 dashboard.clickClientPage();
+//		 }
+//		 else if(Menu.equalsIgnoreCase("Payin-Transactions"))
+//		 {
+////			 dashboard = new DashboardPage(BaseClass.driver);
+//			 dashboard.clickPayinTransactionsPage();
+//		 }
+//		 else if(Menu.equalsIgnoreCase("Payout-Transactions"))
+//		 {
+////			 dashboard=new DashboardPage(BaseClass.driver);
+//			 dashboard.clickPayinTransactionsPage();
+//			 dashboard.clickPayoutPage();
+//		 }
+//		 
+//		 else if (Menu.equalsIgnoreCase("Developers"))
+//		 {
+////			 dashboard = new DashboardPage(BaseClass.driver);
+//			 dashboard.clickDeveloperPage();
+//		 }
+//		 else if (Menu.equalsIgnoreCase(""))
+//		 {
+////			 dashboard = new DashboardPage(BaseClass.driver);
+//			 dashboard.clickDeveloperPage();
+//		 }
+		 
+		 if(Menu.equalsIgnoreCase("Client")) {
+		        dashboard.clickClientPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Payin-Transactions")) {
+		        dashboard.clickPayinTransactionsPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Payout-Transactions")) {
+		        dashboard.clickPayinTransactionsPage();
+		        dashboard.clickPayoutPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Developers")) {
+		        dashboard.clickDeveloperPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("SP Pay-In")) {
+		        dashboard.clickServicePayinPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("SP Pay-Out")) {
+		        dashboard.clickservicePayoutPage();
+		    }
+		   
+		    else if(Menu.equalsIgnoreCase("Payout Balance")) {
+		        dashboard.clickPayoutBalancePage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Settlement")) {
+		        dashboard.clickSettlementPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Change Password")) {
+		        dashboard.changePasswordPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Reseller")) {
+		        dashboard.clickResllerPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Payin Scheduler")) {
+		        dashboard.clickPayinSchedulerPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Payout Scheduler")) {
+		        dashboard.clickPayoutSchedulerPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("CB-VPA")) {
+		        dashboard.clickCBVpaManagementPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Reports")) {
+		        dashboard.clickReportsPage();
+		    }
+		    else if(Menu.equalsIgnoreCase("Audit Logs")) {
+		        dashboard.clickAuditPagePage();
+		    }
+		    else {
+		        Assert.fail("Invalid menu name passed from feature file: " + Menu);
+		    }
 		 
 	 }
 	 
@@ -235,7 +322,114 @@ public class DashboardSteps {
 			 System.out.println(payoutheadertext);
 			 Assert.assertTrue(payoutheadertext.contains("Pay-Out"));
 		 }
+		 else if (Menu.equalsIgnoreCase("Developers"))
+		 {
+			 developers = new Developers_Page(BaseClass.driver);
+			 String developersHeaderText  = developers.fetchDeveloperHeaderText();
+			 System.out.println(developersHeaderText);
+			 Assert.assertTrue(developersHeaderText.contains("Developers"));
+			 
+		 }
 		 
+		 
+		 else if (Menu.equalsIgnoreCase("SP Pay-In"))
+		 {
+			 sppayin=  new Service_Provider_Pay_In(BaseClass.driver);
+			 String sppayinpageHeaderText  = sppayin.fetchSpPayinPageHeaderText();
+			 System.out.println(sppayinpageHeaderText);
+			 Assert.assertTrue(sppayinpageHeaderText.contains("Service Provider Pay-In"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("SP Pay-Out"))
+		 {
+			 sppayout = new Service_Provider_Pay_Out(BaseClass.driver);
+			 String spPayoutHeaderText = sppayout.fetchsppayoutHeaderText();
+			 System.out.println(spPayoutHeaderText);
+			 Assert.assertTrue(spPayoutHeaderText.contains("Service Provider Pay-Out"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Payout Balance"))
+		 {
+			 payoutbalance= new Payout_Balance_Page(BaseClass.driver);
+			 String  payoutbalanceHeaderText = payoutbalance.fetchPayoutHeaderText();
+			 System.out.println(payoutbalanceHeaderText);
+			 Assert.assertTrue(payoutbalanceHeaderText.contains("Payout Balance"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Settlement"))
+		 {
+			 settlemet = new Settlement_Page(BaseClass.driver);
+			 String settlementPageHeaderText  = settlemet.settlementPageHeaderText();
+			 System.out.println(settlementPageHeaderText);
+			 Assert.assertTrue(settlementPageHeaderText.contains("Settlement"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Change Password"))
+		 {
+			 changepassword = new Change_Password_Page (BaseClass.driver);
+			 String  changepasswordPageHeaderText = changepassword.fetchchangePasswordPageHeaderText();
+			 System.out.println(changepasswordPageHeaderText);
+			 Assert.assertTrue(changepasswordPageHeaderText.contains("Change Password"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Reseller"))
+		 {
+			 reseller = new Reseller_Management (BaseClass.driver);
+			 String resellerPageHeaderText  = reseller.fetchResellerManagementHeaderText();
+			 System.out.println(resellerPageHeaderText);
+			 Assert.assertTrue(resellerPageHeaderText.contains("Reseller"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Payin Scheduler"))
+		 {
+			 payinscheduler = new Pay_In_Scheduler (BaseClass.driver);
+			 String payinschedulerHeaderText  = payinscheduler.fetchPayinSchedulerPageHeaderText();
+			 System.out.println(payinschedulerHeaderText);
+			 Assert.assertTrue(payinschedulerHeaderText.contains("Pay-In Scheduler"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Payout Scheduler"))
+		 {
+			 payoutscheduler = new Pay_Out_Scheduler(BaseClass.driver);
+			 String payoutschedulerHeaderText  =payoutscheduler.fetchPayoutSchedulerPageHeaderText();
+			 System.out.println(payoutschedulerHeaderText);
+			 Assert.assertTrue(payoutschedulerHeaderText.contains("Pay-Out"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("CB-VPA"))
+		 {
+			 cbvpamanagement = new CB_VPA_Management_Page(BaseClass.driver);
+			 String cbVpaPageHeaderText  =cbvpamanagement.fetchCbVPAPageHeaderText();
+			 System.out.println(cbVpaPageHeaderText);
+			 Assert.assertTrue(cbVpaPageHeaderText.contains("CB VPA Management"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Reports"))
+		 {
+			 reports = new Reports_Page(BaseClass.driver);
+			 String reportsPageHeaderText  =reports.fetchReportsPageHeaderText();
+			 System.out.println(reportsPageHeaderText);
+			 Assert.assertTrue(reportsPageHeaderText.contains("Reports"));
+			 
+		 }
+		 
+		 else if (Menu.equalsIgnoreCase("Audit Logs"))
+		 {
+			 auditpage = new Audit_Logs_Page(BaseClass.driver);
+			 String auditPageHeaderText  =auditpage.fetchAuditLogsPageHeaderText();
+			 System.out.println(auditPageHeaderText);
+			 Assert.assertTrue(auditPageHeaderText.contains("Audit Logs"));
+			 
+		 }
 	 }
 	 
 	 

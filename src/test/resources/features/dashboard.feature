@@ -117,19 +117,19 @@ Examples:
 | Client            |
 | Payin-Transactions      |
 | Payout-Transactions	  |
-#| Developers        |
-#| SP Pay-In         |
-#| SP Pay-Out        |
+| Developers        |
+| SP Pay-In         |
+| SP Pay-Out        |
 #| Wallet Ledger     |
-#| Payout Balance    |
-#| Settlement        |
-#| Change Password   |
-#| Reseller          |
-#| Payin Scheduler   |
-#| Payout Scheduler  |
-#| CB-VPA            |
-#| Reports           |
-#| Audit Logs        |
+| Payout Balance    |
+| Settlement        |
+| Change Password   |
+| Reseller          |
+| Payin Scheduler   |
+| Payout Scheduler  |
+| CB-VPA            |
+| Reports           |
+| Audit Logs        |
   
   
   

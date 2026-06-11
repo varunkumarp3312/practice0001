@@ -15,10 +15,10 @@ public class ConfigReader {
 			
 			String configPath = System.getenv("CONFIG_FILE");
 
-			FileInputStream fis =
-			        new FileInputStream(configPath);
+//			FileInputStream fis =
+//			        new FileInputStream(configPath);//env setup in jenkins
 			
-//			FileInputStream fis = new FileInputStream("src/test/resources/config/config.properties");
+			FileInputStream fis = new FileInputStream("src/test/resources/config/config.properties");//totest in local
 			prop.load(fis);
 			
 		} catch (Exception e) {
