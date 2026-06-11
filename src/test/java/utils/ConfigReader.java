@@ -13,7 +13,12 @@ public class ConfigReader {
 		
 		try {
 			
-			FileInputStream fis = new FileInputStream("src/test/resources/config/config.properties");
+			String configPath = System.getenv("CONFIG_FILE");
+
+			FileInputStream fis =
+			        new FileInputStream(configPath);
+			
+//			FileInputStream fis = new FileInputStream("src/test/resources/config/config.properties");
 			prop.load(fis);
 			
 		} catch (Exception e) {
