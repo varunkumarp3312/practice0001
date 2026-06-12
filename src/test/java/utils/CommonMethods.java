@@ -54,7 +54,7 @@ public class CommonMethods {
 	    js.executeScript("arguments[0].click();", element);
 	}
 	
-
+	
 	
 	
 	

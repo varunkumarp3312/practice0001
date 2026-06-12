@@ -1,0 +1,150 @@
+@clientRegression
+Feature: Client Page Functionality
+
+Scenario: Verify Client page loads successfully
+  Given user is logged in
+  When user navigates to Client page
+  Then Client page header should be displayed
+  And Client table should be displayed
+
+Scenario: Verify Client page header
+  Given user is on Client page
+  Then page header should display "Client"
+
+Scenario: Verify client table headers
+  Given user is on Client page
+  Then following columns should be displayed
+    | S.No |
+    | Date |
+    | Company Name |
+    | Email |
+    | Status |
+    | Service Details |
+    | Action |
+
+Scenario: Verify client records are displayed
+  Given user is on Client page
+  Then at least one client record should be displayed
+
+Scenario: Verify Add New Client button visibility
+  Given user is on Client page
+  Then Add New Client button should be displayed
+
+Scenario: Verify Add New Client functionality
+  Given user is on Client page
+  When user clicks Add New Client button
+  Then Add Client popup should be displayed
+
+Scenario: Verify Filter button visibility
+  Given user is on Client page
+  Then Filter button should be displayed
+
+Scenario: Verify filter popup opens
+  Given user is on Client page
+  When user clicks Filter button
+  Then Filter popup should be displayed
+
+Scenario Outline: Verify client search
+  Given user is on Client page
+  When user searches company "<CompanyName>"
+  Then matching company should be displayed
+
+Examples:
+| CompanyName         |
+| RHINOTECH_PVT_LTD   |
+| CASHTEZ_PVT_LTD     |
+
+Scenario: Verify status toggle displayed
+  Given user is on Client page
+  Then status toggle should be displayed for every client
+
+Scenario: Verify client status can be changed
+  Given user is on Client page
+  When user changes client status
+  Then status should be updated successfully
+
+Scenario: Verify SP Details button
+  Given user is on Client page
+  Then SP Details button should be displayed
+
+Scenario: Verify SP Details page opens
+  Given user is on Client page
+  When user clicks SP Details button
+  Then Service Provider Details page should be displayed
+
+Scenario: Verify action menu visibility
+  Given user is on Client page
+  Then action menu icon should be displayed
+
+Scenario: Verify action menu opens
+  Given user is on Client page
+  When user clicks action menu
+  Then action options should be displayed
+
+Scenario: Verify client edit functionality
+  Given user is on Client page
+  When user selects Edit option
+  Then Edit Client popup should be displayed
+
+Scenario: Verify client details view
+  Given user is on Client page
+  When user clicks View option
+  Then client details should be displayed
+
+Scenario: Verify pagination controls
+  Given user is on Client page
+  Then pagination should be displayed
+
+Scenario: Verify next page navigation
+  Given user is on Client page
+  When user clicks next page button
+  Then next page should be displayed
+
+Scenario: Verify previous page navigation
+  Given user is on page 2
+  When user clicks previous page button
+  Then page 1 should be displayed
+
+Scenario: Verify direct page navigation
+  Given user is on Client page
+  When user clicks page number 2
+  Then page 2 data should be displayed
+
+Scenario: Verify page size functionality
+  Given user is on Client page
+  When user enters page size 20
+  Then 20 records should be displayed
+
+Scenario: Verify serial numbers
+  Given user is on Client page
+  Then serial numbers should be displayed sequentially
+
+Scenario: Verify client email format
+  Given user is on Client page
+  Then displayed email addresses should be valid
+
+Scenario: Verify client date format
+  Given user is on Client page
+  Then dates should be displayed in valid format
+
+Scenario: Verify logout button visibility
+  Given user is on Client page
+  Then logout button should be displayed
+
+Scenario: Verify logout functionality
+  Given user is on Client page
+  When user clicks logout button
+  Then user should navigate to login page
+  
+  
+  
+1. Login
+2. Navigate to Client Page
+3. Verify Client Header
+4. Verify Client Records Displayed
+5. Verify Add New Client Button
+6. Verify Filter Button
+7. Verify SP Details Button
+8. Verify Action Menu
+9. Verify Pagination
+10. Logout

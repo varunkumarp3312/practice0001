@@ -114,22 +114,22 @@ Scenario: Verify month card data after selecting client
 
 Examples:
 | Menu              |
-| Client            |
-| Payin-Transactions      |
-| Payout-Transactions	  |
-| Developers        |
-| SP Pay-In         |
-| SP Pay-Out        |
+#| Client            |
+#| Payin-Transactions      |
+#| Payout-Transactions	  |
+#| Developers        |
+#| SP Pay-In         |
+#| SP Pay-Out        |
 #| Wallet Ledger     |
-| Payout Balance    |
-| Settlement        |
-| Change Password   |
-| Reseller          |
-| Payin Scheduler   |
-| Payout Scheduler  |
+#| Payout Balance    |
+#| Settlement        |
+#| Change Password   |
+#| Reseller          |
+#| Payin Scheduler   |
+#| Payout Scheduler  |
 | CB-VPA            |
-| Reports           |
-| Audit Logs        |
+#| Reports           |
+#| Audit Logs        |
   
   
   

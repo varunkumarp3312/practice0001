@@ -93,7 +93,7 @@ public class DashboardPage {
 	
 	By reportsPageButton = By.xpath("//a[@href='/reports']");
 	
-	By auditLogPageButton = By.xpath("//a[@href='/audit-logs']");
+	By auditLogPageButton = By.xpath("//span[contains(text(),'Audit Logs')]");
 	
 	
 	public  DashboardPage(WebDriver driver) {
@@ -280,37 +280,38 @@ public class DashboardPage {
 	}
 	public void changePasswordPage()
 	{
-		common.click(changePasswordButton);
+		common.jsClick(changePasswordButton);
 	}
 	
 	public void clickResllerPage()
 	{
-		common.click(resellerpageButton);
+		common.jsClick(resellerpageButton);
 	}
 	
 	public void clickPayinSchedulerPage()
 	{
-		common.click(payinSchedulerPageButton);
+		common.jsClick(payinSchedulerPageButton);
 	}
 	
 	public void clickPayoutSchedulerPage()
 	{
-		common.click(payoutSchedulerPageButton);
+		common.jsClick(payoutSchedulerPageButton);
 	}
 	
 	public void clickCBVpaManagementPage()
 	{
-		common.click(chargeBackVpaPageButton);
+		common.jsClick(chargeBackVpaPageButton);
 	}
 	
 	public void clickReportsPage()
 	{
-		common.click(reportsPageButton);
+		
+		common.jsClick(reportsPageButton);
 	}
 	
 	public void clickAuditPagePage()
 	{
-		common.click(auditLogPageButton);
+		common.jsClick(auditLogPageButton);
 	}
 	
 	
