@@ -114,7 +114,7 @@ Scenario: Verify month card data after selecting client
 
 Examples:
 | Menu              |
-#| Client            |
+| Client            |
 #| Payin-Transactions      |
 #| Payout-Transactions	  |
 #| Developers        |
@@ -128,8 +128,8 @@ Examples:
 #| Payin Scheduler   |
 #| Payout Scheduler  |
 #| CB-VPA            |
-| Reports           |
-| Audit Logs        |
+#| Reports           |
+#| Audit Logs        |
   
   
   
