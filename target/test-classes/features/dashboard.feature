@@ -127,9 +127,9 @@ Examples:
 #| Reseller          |
 #| Payin Scheduler   |
 #| Payout Scheduler  |
-| CB-VPA            |
-#| Reports           |
-#| Audit Logs        |
+#| CB-VPA            |
+| Reports           |
+| Audit Logs        |
   
   
   
